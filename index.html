@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="FounderVers - Connect, Build, Succeed. The founder's social platform.">
+    <title>FounderVers - The Founder's Social Platform</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        html, body {
+            width: 100%;
+            height: 100%;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Helvetica Neue', sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+        }
+        
+        .container {
+            background: white;
+            border-radius: 16px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+            max-width: 700px;
+            padding: 80px 50px;
+            text-align: center;
+            animation: slideUp 0.6s ease-out;
+        }
+        
+        @keyframes slideUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        .logo {
+            font-size: 3.5em;
+            margin-bottom: 15px;
+            display: inline-block;
+        }
+        
+        h1 {
+            color: #667eea;
+            font-size: 2.5em;
+            margin-bottom: 10px;
+            font-weight: 700;
+        }
+        
+        .tagline {
+            color: #764ba2;
+            font-size: 1.3em;
+            margin-bottom: 15px;
+            font-weight: 500;
+        }
+        
+        .description {
+            color: #2c3e50;
+            font-size: 1.05em;
+            line-height: 1.8;
+            margin-bottom: 50px;
+        }
+        
+        .sections {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+            margin-bottom: 40px;
+        }
+        
+        .section {
+            padding: 25px;
+            background: #f8f9fa;
+            border-radius: 12px;
+            transition: all 0.3s ease;
+            border: 2px solid transparent;
+        }
+        
+        .section:hover {
+            background: #f0f3ff;
+            border-color: #667eea;
+            transform: translateY(-5px);
+        }
+        
+        .section-icon {
+            font-size: 2.5em;
+            margin-bottom: 10px;
+        }
+        
+        .section h3 {
+            color: #667eea;
+            font-size: 1.2em;
+            margin-bottom: 10px;
+        }
+        
+        .section p {
+            color: #555;
+            font-size: 0.95em;
+            line-height: 1.6;
+        }
+        
+        .buttons {
+            display: flex;
+            gap: 15px;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin-bottom: 30px;
+        }
+        
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 16px 32px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            text-decoration: none;
+            border-radius: 8px;
+            font-size: 1em;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(102, 126, 234, 0.3);
+            border: none;
+            cursor: pointer;
+        }
+        
+        .btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(102, 126, 234, 0.4);
+        }
+        
+        .legal-links {
+            padding-top: 30px;
+            border-top: 1px solid #ecf0f1;
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+        
+        .legal-links a {
+            color: #667eea;
+            text-decoration: none;
+            font-size: 0.95em;
+            font-weight: 500;
+            transition: color 0.2s;
+        }
+        
+        .legal-links a:hover {
+            color: #764ba2;
+        }
+        
+        .footer {
+            margin-top: 30px;
+            color: #7f8c8d;
+            font-size: 0.9em;
+        }
+        
+        .app-download {
+            padding: 30px;
+            background: linear-gradient(135deg, #667eea15 0%, #764ba215 100%);
+            border-radius: 12px;
+            margin-bottom: 30px;
+            border: 2px solid #667eea30;
+        }
+        
+        .app-download h3 {
+            color: #667eea;
+            margin-bottom: 15px;
+        }
+        
+        .app-buttons {
+            display: flex;
+            gap: 15px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+        
+        .app-btn {
+            padding: 12px 24px;
+            background: white;
+            color: #667eea;
+            text-decoration: none;
+            border-radius: 8px;
+            font-weight: 600;
+            transition: all 0.3s;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+        
+        .app-btn:hover {
+            background: #667eea;
+            color: white;
+            transform: translateY(-2px);
+        }
+        
+        @media (max-width: 768px) {
+            .container {
+                padding: 40px 25px;
+            }
+            
+            h1 {
+                font-size: 2em;
+            }
+            
+            .tagline {
+                font-size: 1.1em;
+            }
+            
+            .sections {
+                grid-template-columns: 1fr;
+            }
+            
+            .buttons {
+                flex-direction: column;
+            }
+            
+            .btn {
+                width: 100%;
+                justify-content: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="logo">🚀</div>
+        <h1>FounderVers</h1>
+        <div class="tagline">Connect. Build. Succeed.</div>
+        <p class="description">
+            The premier social platform connecting founders, entrepreneurs, and startup enthusiasts worldwide.
+            Share your journey, build your network, and grow your impact.
+        </p>
+        
+        <div class="sections">
+            <div class="section">
+                <div class="section-icon">🤝</div>
+                <h3>Connect</h3>
+                <p>Network with like-minded founders and entrepreneurs in real-time.</p>
+            </div>
+            <div class="section">
+                <div class="section-icon">🛠️</div>
+                <h3>Build</h3>
+                <p>Collaborate and share insights with our community tools.</p>
+            </div>
+            <div class="section">
+                <div class="section-icon">📈</div>
+                <h3>Grow</h3>
+                <p>Scale your business with access to resources and opportunities.</p>
+            </div>
+            <div class="section">
+                <div class="section-icon">💬</div>
+                <h3>Share</h3>
+                <p>Post updates, media, and messages with your network instantly.</p>
+            </div>
+        </div>
+        
+        <div class="app-download">
+            <h3>Download FounderVers Today</h3>
+            <div class="app-buttons">
+                <a href="https://apps.apple.com/app/foundervers/id6738901234" class="app-btn" target="_blank">
+                    🍎 App Store
+                </a>
+                <a href="https://play.google.com/store/apps/details?id=com.foundervers.mobile" class="app-btn" target="_blank">
+                    🤖 Google Play
+                </a>
+            </div>
+        </div>
+        
+        <div class="buttons">
+            <a href="legal.html" class="btn">📋 Legal Documents</a>
+            <a href="privacy.html" class="btn">🔒 Privacy Policy</a>
+        </div>
+        
+        <div class="legal-links">
+            <a href="privacy.html">Privacy Policy</a>
+            <span>•</span>
+            <a href="terms.html">Terms of Service</a>
+            <span>•</span>
+            <a href="legal.html">Legal Hub</a>
+        </div>
+        
+        <div class="footer">
+            <p>© 2025 FounderVers. All rights reserved.</p>
+            <p style="margin-top: 8px;">iOS & Android • Version 1.0.0</p>
+        </div>
+    </div>
+</body>
+</html>
