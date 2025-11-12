@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="FounderVers - Connect, Build, Succeed. The founder's social platform.">
+    <meta name="description" content="FounderVers - Connect, Build, Succeed. The founder's social platform for entrepreneurs.">
     <title>FounderVers - The Founder's Social Platform</title>
     <style>
         * {
@@ -21,26 +21,104 @@
             font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Helvetica Neue', sans-serif;
             background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
             min-height: 100vh;
+            color: #2c3e50;
+            line-height: 1.6;
+        }
+        
+        /* Navigation */
+        nav {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            padding: 15px 0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 2px 20px rgba(0, 0, 0, 0.1);
+        }
+        
+        nav .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 20px;
+        }
+        
+        nav .logo-nav {
+            font-size: 1.5em;
+            font-weight: 700;
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        
+        nav a {
+            color: #2c3e50;
+            text-decoration: none;
+            margin-left: 30px;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+        
+        nav a:hover {
+            color: #667eea;
+        }
+        
+        /* Hero Section */
+        .hero {
+            min-height: 100vh;
             display: flex;
             align-items: center;
             justify-content: center;
-            padding: 20px;
+            text-align: center;
+            padding: 40px 20px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            position: relative;
+            overflow: hidden;
         }
         
-        .container {
-            background: white;
-            border-radius: 16px;
-            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
-            max-width: 700px;
-            padding: 80px 50px;
-            text-align: center;
-            animation: slideUp 0.6s ease-out;
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -10%;
+            width: 500px;
+            height: 500px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            animation: float 6s ease-in-out infinite;
+        }
+        
+        .hero::after {
+            content: '';
+            position: absolute;
+            bottom: -30%;
+            left: -5%;
+            width: 400px;
+            height: 400px;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 50%;
+            animation: float 8s ease-in-out infinite reverse;
+        }
+        
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-20px); }
+        }
+        
+        .hero-content {
+            position: relative;
+            z-index: 1;
+            color: white;
+            animation: slideUp 0.8s ease-out;
         }
         
         @keyframes slideUp {
             from {
                 opacity: 0;
-                transform: translateY(30px);
+                transform: translateY(50px);
             }
             to {
                 opacity: 1;
@@ -48,255 +126,352 @@
             }
         }
         
-        .logo {
-            font-size: 3.5em;
+        .hero-icon {
+            font-size: 5em;
+            margin-bottom: 20px;
+            display: block;
+            animation: bounce 2s ease-in-out infinite;
+        }
+        
+        @keyframes bounce {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-20px); }
+        }
+        
+        .hero h1 {
+            font-size: 4em;
             margin-bottom: 15px;
-            display: inline-block;
+            font-weight: 800;
+            text-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
         }
         
-        h1 {
-            color: #667eea;
-            font-size: 2.5em;
-            margin-bottom: 10px;
-            font-weight: 700;
+        .hero .tagline {
+            font-size: 1.8em;
+            margin-bottom: 30px;
+            opacity: 0.95;
+            font-weight: 300;
+            letter-spacing: 2px;
         }
         
-        .tagline {
-            color: #764ba2;
-            font-size: 1.3em;
-            margin-bottom: 15px;
-            font-weight: 500;
+        .hero p {
+            font-size: 1.2em;
+            max-width: 600px;
+            margin: 0 auto 50px;
+            opacity: 0.9;
         }
         
-        .description {
-            color: #2c3e50;
-            font-size: 1.05em;
-            line-height: 1.8;
-            margin-bottom: 50px;
-        }
-        
-        .sections {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
+        .cta-buttons {
+            display: flex;
             gap: 20px;
+            justify-content: center;
+            flex-wrap: wrap;
             margin-bottom: 40px;
         }
         
-        .section {
-            padding: 25px;
-            background: #f8f9fa;
-            border-radius: 12px;
+        .cta-btn {
+            padding: 16px 40px;
+            font-size: 1.1em;
+            font-weight: 600;
+            border: none;
+            border-radius: 50px;
+            cursor: pointer;
             transition: all 0.3s ease;
-            border: 2px solid transparent;
+            text-decoration: none;
+            display: inline-block;
         }
         
-        .section:hover {
-            background: #f0f3ff;
-            border-color: #667eea;
-            transform: translateY(-5px);
-        }
-        
-        .section-icon {
-            font-size: 2.5em;
-            margin-bottom: 10px;
-        }
-        
-        .section h3 {
+        .cta-btn.primary {
+            background: white;
             color: #667eea;
-            font-size: 1.2em;
-            margin-bottom: 10px;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
         }
         
-        .section p {
+        .cta-btn.primary:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 12px 35px rgba(0, 0, 0, 0.3);
+        }
+        
+        .cta-btn.secondary {
+            background: transparent;
+            color: white;
+            border: 2px solid white;
+        }
+        
+        .cta-btn.secondary:hover {
+            background: white;
+            color: #667eea;
+        }
+        
+        /* Features Section */
+        .features {
+            padding: 100px 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .features h2 {
+            text-align: center;
+            font-size: 2.5em;
+            margin-bottom: 60px;
+            color: #2c3e50;
+        }
+        
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+        }
+        
+        .feature-card {
+            background: white;
+            padding: 40px 30px;
+            border-radius: 15px;
+            text-align: center;
+            box-shadow: 0 5px 25px rgba(0, 0, 0, 0.08);
+            transition: all 0.3s ease;
+            border-top: 4px solid transparent;
+        }
+        
+        .feature-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 40px rgba(102, 126, 234, 0.2);
+            border-top-color: #667eea;
+        }
+        
+        .feature-icon {
+            font-size: 3.5em;
+            margin-bottom: 20px;
+        }
+        
+        .feature-card h3 {
+            font-size: 1.4em;
+            margin-bottom: 15px;
+            color: #667eea;
+        }
+        
+        .feature-card p {
             color: #555;
             font-size: 0.95em;
-            line-height: 1.6;
         }
         
-        .buttons {
-            display: flex;
-            gap: 15px;
-            justify-content: center;
-            flex-wrap: wrap;
-            margin-bottom: 30px;
-        }
-        
-        .btn {
-            display: inline-flex;
-            align-items: center;
-            gap: 8px;
-            padding: 16px 32px;
+        /* Download Section */
+        .download-section {
             background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
             color: white;
-            text-decoration: none;
-            border-radius: 8px;
-            font-size: 1em;
-            font-weight: 600;
-            transition: all 0.3s ease;
-            box-shadow: 0 4px 15px rgba(102, 126, 234, 0.3);
-            border: none;
-            cursor: pointer;
+            padding: 80px 20px;
+            text-align: center;
         }
         
-        .btn:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 8px 25px rgba(102, 126, 234, 0.4);
+        .download-section h2 {
+            font-size: 2.5em;
+            margin-bottom: 20px;
         }
         
-        .legal-links {
-            padding-top: 30px;
-            border-top: 1px solid #ecf0f1;
+        .download-section p {
+            font-size: 1.1em;
+            margin-bottom: 40px;
+            opacity: 0.9;
+        }
+        
+        .app-download-btns {
             display: flex;
             gap: 20px;
-            justify-content: center;
-            flex-wrap: wrap;
-        }
-        
-        .legal-links a {
-            color: #667eea;
-            text-decoration: none;
-            font-size: 0.95em;
-            font-weight: 500;
-            transition: color 0.2s;
-        }
-        
-        .legal-links a:hover {
-            color: #764ba2;
-        }
-        
-        .footer {
-            margin-top: 30px;
-            color: #7f8c8d;
-            font-size: 0.9em;
-        }
-        
-        .app-download {
-            padding: 30px;
-            background: linear-gradient(135deg, #667eea15 0%, #764ba215 100%);
-            border-radius: 12px;
-            margin-bottom: 30px;
-            border: 2px solid #667eea30;
-        }
-        
-        .app-download h3 {
-            color: #667eea;
-            margin-bottom: 15px;
-        }
-        
-        .app-buttons {
-            display: flex;
-            gap: 15px;
             justify-content: center;
             flex-wrap: wrap;
         }
         
         .app-btn {
-            padding: 12px 24px;
+            padding: 14px 32px;
             background: white;
             color: #667eea;
             text-decoration: none;
-            border-radius: 8px;
+            border-radius: 50px;
             font-weight: 600;
+            font-size: 1em;
             transition: all 0.3s;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
         }
         
         .app-btn:hover {
-            background: #667eea;
+            transform: translateY(-4px);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.25);
+        }
+        
+        /* Footer */
+        footer {
+            background: #1a1a2e;
             color: white;
-            transform: translateY(-2px);
+            padding: 50px 20px 30px;
+            text-align: center;
+        }
+        
+        .footer-links {
+            display: flex;
+            gap: 30px;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin-bottom: 30px;
+        }
+        
+        .footer-links a {
+            color: #667eea;
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+        
+        .footer-links a:hover {
+            color: #764ba2;
+        }
+        
+        .footer-info {
+            color: #aaa;
+            font-size: 0.9em;
+            margin-top: 20px;
         }
         
         @media (max-width: 768px) {
-            .container {
-                padding: 40px 25px;
+            nav .nav-container {
+                flex-direction: column;
+                gap: 15px;
             }
             
-            h1 {
-                font-size: 2em;
+            nav a {
+                margin-left: 0;
+                margin: 0 15px;
             }
             
-            .tagline {
-                font-size: 1.1em;
+            .hero h1 {
+                font-size: 2.5em;
             }
             
-            .sections {
-                grid-template-columns: 1fr;
+            .hero .tagline {
+                font-size: 1.3em;
             }
             
-            .buttons {
+            .hero p {
+                font-size: 1em;
+            }
+            
+            .cta-buttons {
                 flex-direction: column;
             }
             
-            .btn {
+            .cta-btn {
                 width: 100%;
-                justify-content: center;
+            }
+            
+            .features h2 {
+                font-size: 2em;
+            }
+            
+            .download-section h2 {
+                font-size: 2em;
             }
         }
     </style>
 </head>
 <body>
-    <div class="container">
-        <div class="logo">🚀</div>
-        <h1>FounderVers</h1>
-        <div class="tagline">Connect. Build. Succeed.</div>
-        <p class="description">
-            The premier social platform connecting founders, entrepreneurs, and startup enthusiasts worldwide.
-            Share your journey, build your network, and grow your impact.
-        </p>
-        
-        <div class="sections">
-            <div class="section">
-                <div class="section-icon">🤝</div>
+    <!-- Navigation -->
+    <nav>
+        <div class="nav-container">
+            <div class="logo-nav">🚀 FounderVers</div>
+            <div>
+                <a href="#features">Features</a>
+                <a href="legal.html">Legal</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <span class="hero-icon">🚀</span>
+            <h1>FounderVers</h1>
+            <div class="tagline">Connect. Build. Succeed.</div>
+            <p>The premier social platform where founders, entrepreneurs, and innovators connect, collaborate, and grow together. Share your journey, build your network, and unlock limitless opportunities.</p>
+            
+            <div class="cta-buttons">
+                <a href="#download" class="cta-btn primary">Download Now</a>
+                <a href="legal.html" class="cta-btn secondary">View Legal Documents</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="features" id="features">
+        <h2>Why Choose FounderVers?</h2>
+        <div class="features-grid">
+            <div class="feature-card">
+                <div class="feature-icon">🤝</div>
                 <h3>Connect</h3>
-                <p>Network with like-minded founders and entrepreneurs in real-time.</p>
+                <p>Network with thousands of like-minded founders and entrepreneurs. Build meaningful relationships that drive your business forward.</p>
             </div>
-            <div class="section">
-                <div class="section-icon">🛠️</div>
+            
+            <div class="feature-card">
+                <div class="feature-icon">🛠️</div>
                 <h3>Build</h3>
-                <p>Collaborate and share insights with our community tools.</p>
+                <p>Collaborate with your community using our powerful tools. Share ideas, get feedback, and turn concepts into reality together.</p>
             </div>
-            <div class="section">
-                <div class="section-icon">📈</div>
+            
+            <div class="feature-card">
+                <div class="feature-icon">📈</div>
                 <h3>Grow</h3>
-                <p>Scale your business with access to resources and opportunities.</p>
+                <p>Access exclusive resources, mentorship opportunities, and growth strategies. Scale your business with community support.</p>
             </div>
-            <div class="section">
-                <div class="section-icon">💬</div>
+            
+            <div class="feature-card">
+                <div class="feature-icon">💬</div>
                 <h3>Share</h3>
-                <p>Post updates, media, and messages with your network instantly.</p>
+                <p>Post updates, share media, and engage in real-time conversations. Keep your network informed every step of your journey.</p>
+            </div>
+            
+            <div class="feature-card">
+                <div class="feature-icon">�</div>
+                <h3>Secure</h3>
+                <p>Your data is protected with enterprise-grade security. We prioritize your privacy and keep your information safe.</p>
+            </div>
+            
+            <div class="feature-card">
+                <div class="feature-icon">🌍</div>
+                <h3>Global Reach</h3>
+                <p>Join a worldwide community of entrepreneurs. Connect across borders and explore international opportunities.</p>
             </div>
         </div>
-        
-        <div class="app-download">
-            <h3>Download FounderVers Today</h3>
-            <div class="app-buttons">
-                <a href="https://apps.apple.com/app/foundervers/id6738901234" class="app-btn" target="_blank">
-                    🍎 App Store
-                </a>
-                <a href="https://play.google.com/store/apps/details?id=com.foundervers.mobile" class="app-btn" target="_blank">
-                    🤖 Google Play
-                </a>
-            </div>
+    </section>
+
+    <!-- Download Section -->
+    <section class="download-section" id="download">
+        <h2>Ready to Join the Movement?</h2>
+        <p>Download FounderVers today and become part of the world's fastest-growing founder community</p>
+        <div class="app-download-btns">
+            <a href="https://apps.apple.com/app/foundervers/id6738901234" class="app-btn" target="_blank">
+                🍎 Download on App Store
+            </a>
+            <a href="https://play.google.com/store/apps/details?id=com.foundervers.mobile" class="app-btn" target="_blank">
+                🤖 Download on Google Play
+            </a>
         </div>
-        
-        <div class="buttons">
-            <a href="legal.html" class="btn">📋 Legal Documents</a>
-            <a href="privacy.html" class="btn">🔒 Privacy Policy</a>
-        </div>
-        
-        <div class="legal-links">
-            <a href="privacy.html">Privacy Policy</a>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-links">
+            <a href="legal.html">Legal Documents</a>
             <span>•</span>
-            <a href="terms.html">Terms of Service</a>
+            <a href="legal.html#privacy">Privacy Policy</a>
             <span>•</span>
-            <a href="legal.html">Legal Hub</a>
+            <a href="legal.html#terms">Terms of Service</a>
+            <span>•</span>
+            <a href="#">Support</a>
         </div>
-        
-        <div class="footer">
+        <div class="footer-info">
             <p>© 2025 FounderVers. All rights reserved.</p>
-            <p style="margin-top: 8px;">iOS & Android • Version 1.0.0</p>
+            <p>iOS & Android • Version 1.0.0 | Connecting Founders Worldwide 🌍</p>
         </div>
-    </div>
+    </footer>
 </body>
 </html>
