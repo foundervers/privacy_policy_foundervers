@@ -3,7 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>FounderVers - Legal</title>
+    <meta name="description" content="FounderVers - Legal Documents, Privacy Policy & Terms of Service">
+    <title>FounderVers - Legal Documents</title>
     <style>
         * {
             margin: 0;
@@ -11,125 +12,608 @@
             box-sizing: border-box;
         }
         
+        html, body {
+            width: 100%;
+            height: 100%;
+        }
+        
         body {
             font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Helvetica Neue', sans-serif;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            min-height: 100vh;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            padding: 20px;
+            line-height: 1.6;
+            color: #2c3e50;
+            background: #f5f7fa;
         }
         
+        /* Header */
+        .header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 50px 20px 30px;
+            text-align: center;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.15);
+        }
+        
+        .header-container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .logo-header {
+            font-size: 2em;
+            font-weight: 700;
+            margin-bottom: 10px;
+        }
+        
+        .tagline-header {
+            font-size: 1em;
+            opacity: 0.9;
+        }
+        
+        .back-link {
+            display: inline-block;
+            margin-top: 15px;
+            color: white;
+            text-decoration: none;
+            font-size: 0.95em;
+            opacity: 0.85;
+            transition: opacity 0.3s;
+        }
+        
+        .back-link:hover {
+            opacity: 1;
+        }
+        
+        /* Navigation Tabs */
+        .nav-tabs {
+            background: white;
+            border-bottom: 2px solid #ecf0f1;
+            position: sticky;
+            top: 0;
+            z-index: 50;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+        }
+        
+        .tabs-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            padding: 0 20px;
+        }
+        
+        .tab {
+            padding: 16px 30px;
+            cursor: pointer;
+            font-weight: 600;
+            color: #7f8c8d;
+            text-decoration: none;
+            border-bottom: 3px solid transparent;
+            transition: all 0.3s;
+            position: relative;
+        }
+        
+        .tab:hover {
+            color: #667eea;
+        }
+        
+        .tab.active {
+            color: #667eea;
+            border-bottom-color: #667eea;
+        }
+        
+        /* Container */
         .container {
+            max-width: 1000px;
+            margin: 40px auto;
             background: white;
             border-radius: 12px;
-            box-shadow: 0 8px 32px rgba(0,0,0,0.2);
-            max-width: 600px;
-            padding: 60px 40px;
-            text-align: center;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+            overflow: hidden;
         }
         
-        .logo {
-            font-size: 2.5em;
-            margin-bottom: 10px;
+        .content-section {
+            display: none;
+            padding: 60px 50px;
+            animation: fadeIn 0.3s ease-in;
         }
         
+        .content-section.active {
+            display: block;
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        
+        /* Typography */
         h1 {
             color: #667eea;
-            margin-bottom: 10px;
-            font-size: 2em;
+            border-bottom: 3px solid #667eea;
+            padding-bottom: 15px;
+            margin-bottom: 30px;
+            font-size: 2.2em;
         }
         
-        .tagline {
+        h2 {
             color: #764ba2;
-            font-size: 1.2em;
-            margin-bottom: 40px;
+            margin-top: 40px;
+            margin-bottom: 20px;
+            font-size: 1.5em;
+            display: flex;
+            align-items: center;
+            gap: 10px;
         }
         
-        .links {
-            display: flex;
-            gap: 20px;
-            flex-direction: column;
+        h2:first-child {
+            margin-top: 0;
+        }
+        
+        h3 {
+            color: #667eea;
+            margin-top: 25px;
+            margin-bottom: 15px;
+            font-size: 1.1em;
+        }
+        
+        .last-updated {
+            color: #7f8c8d;
+            font-style: italic;
+            margin-bottom: 30px;
+            padding-bottom: 20px;
+            border-bottom: 1px solid #ecf0f1;
         }
         
         a {
-            display: inline-block;
-            padding: 16px 32px;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            color: white;
+            color: #667eea;
             text-decoration: none;
-            border-radius: 8px;
-            font-size: 1.1em;
-            font-weight: 600;
-            transition: all 0.3s ease;
-            box-shadow: 0 4px 12px rgba(102, 126, 234, 0.3);
+            font-weight: 500;
+            transition: color 0.2s;
         }
         
         a:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 6px 20px rgba(102, 126, 234, 0.4);
+            color: #764ba2;
         }
         
-        .footer {
-            margin-top: 40px;
-            padding-top: 30px;
-            border-top: 1px solid #ecf0f1;
-            color: #7f8c8d;
-            font-size: 0.9em;
+        ul, ol {
+            margin-left: 25px;
+            margin-top: 10px;
         }
         
-        .app-links {
-            margin-top: 30px;
-            padding-top: 30px;
-            border-top: 1px solid #ecf0f1;
+        li {
+            margin-bottom: 12px;
+            line-height: 1.8;
         }
         
-        .app-buttons {
+        p {
+            margin-bottom: 15px;
+            line-height: 1.8;
+        }
+        
+        .info-box {
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+            padding: 30px;
+            border-radius: 8px;
+            margin: 30px 0;
+            border-left: 4px solid #667eea;
+        }
+        
+        .info-box h3 {
+            margin-top: 0;
+            color: #2c3e50;
+        }
+        
+        .service-card {
+            background: #f8f9fa;
+            padding: 20px;
+            border-radius: 8px;
+            margin: 15px 0;
+            border-left: 4px solid #764ba2;
+        }
+        
+        .service-card strong {
+            color: #667eea;
+        }
+        
+        /* Download Section */
+        .download-box {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 40px;
+            border-radius: 8px;
+            margin: 40px 0;
+            text-align: center;
+        }
+        
+        .download-box h2 {
+            color: white;
+            margin-top: 0;
+            border: none;
+            padding: 0;
+        }
+        
+        .download-box p {
+            opacity: 0.95;
+        }
+        
+        .download-buttons {
             display: flex;
             gap: 15px;
+            justify-content: center;
+            margin-top: 25px;
+            flex-wrap: wrap;
+        }
+        
+        .app-button {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 12px 28px;
+            background: white;
+            color: #667eea;
+            text-decoration: none;
+            border-radius: 25px;
+            font-weight: 600;
+            font-size: 0.95em;
+            transition: all 0.3s;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.15);
+        }
+        
+        .app-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(0,0,0,0.2);
+        }
+        
+        /* Footer */
+        .footer {
+            background: #1a1a2e;
+            color: #aaa;
+            padding: 30px 50px;
+            text-align: center;
+            font-size: 0.9em;
+            border-top: 1px solid #ecf0f1;
+        }
+        
+        .footer-links {
+            margin-bottom: 15px;
+            display: flex;
+            gap: 20px;
             justify-content: center;
             flex-wrap: wrap;
         }
         
-        .app-btn {
-            padding: 12px 20px;
-            background: #f5f7fa;
+        .footer-links a {
             color: #667eea;
-            font-weight: 600;
-            border-radius: 6px;
-            transition: all 0.2s;
         }
         
-        .app-btn:hover {
-            background: #667eea;
-            color: white;
+        /* Responsive */
+        @media (max-width: 768px) {
+            .content-section {
+                padding: 30px 20px;
+            }
+            
+            .tabs-container {
+                overflow-x: auto;
+                padding-left: 10px;
+            }
+            
+            .tab {
+                padding: 12px 15px;
+                font-size: 0.9em;
+                white-space: nowrap;
+            }
+            
+            h1 {
+                font-size: 1.6em;
+            }
+            
+            .download-buttons {
+                flex-direction: column;
+            }
+            
+            .app-button {
+                width: 100%;
+                justify-content: center;
+            }
         }
     </style>
 </head>
 <body>
-    <div class="container">
-        <div class="logo">🚀</div>
-        <h1>FounderVers</h1>
-        <div class="tagline">Connect. Build. Succeed.</div>
-        
-        <div class="links">
-            <a href="privacy.html">📋 Privacy Policy</a>
-            <a href="terms.html">⚖️ Terms of Service</a>
-        </div>
-        
-        <div class="app-links">
-            <p style="color: #7f8c8d; margin-bottom: 15px;">Download our app:</p>
-            <div class="app-buttons">
-                <a href="https://apps.apple.com/app/foundervers/id6738901234" class="app-btn" target="_blank">🍎 App Store</a>
-                <a href="https://play.google.com/store/apps/details?id=com.foundervers.mobile" class="app-btn" target="_blank">🤖 Google Play</a>
-            </div>
-        </div>
-        
-        <div class="footer">
-            <p>© 2025 FounderVers. All rights reserved.</p>
-            <p style="margin-top: 10px;">Version 1.0.0 | iOS & Android</p>
+    <!-- Header -->
+    <div class="header">
+        <div class="header-container">
+            <div class="logo-header">🚀 FounderVers</div>
+            <div class="tagline-header">Connect. Build. Succeed.</div>
+            <a href="index.html" class="back-link">← Back to Home</a>
         </div>
     </div>
+    
+    <!-- Navigation Tabs -->
+    <div class="nav-tabs">
+        <div class="tabs-container">
+            <button class="tab active" onclick="switchTab('privacy', event)">🔒 Privacy Policy</button>
+            <button class="tab" onclick="switchTab('terms', event)">📋 Terms of Service</button>
+        </div>
+    </div>
+    
+    <!-- Content -->
+    <div class="container">
+        <!-- Privacy Policy Section -->
+        <div id="privacy" class="content-section active">
+            <h1>Privacy Policy for FounderVers</h1>
+            <p class="last-updated"><strong>Last Updated:</strong> November 12, 2025</p>
+
+            <h2>🎯 Introduction</h2>
+            <p>FounderVers ("we", "our", or "us") is committed to protecting your privacy. This Privacy Policy explains how we collect, use, disclose, and safeguard your information when you use our mobile application.</p>
+
+            <h2>📊 Information We Collect</h2>
+            
+            <h3>Information You Provide</h3>
+            <ul>
+                <li><strong>Account Information:</strong> Name, email address, profile photo, bio</li>
+                <li><strong>User Content:</strong> Posts, comments, messages, photos, videos</li>
+                <li><strong>Payment Information:</strong> Processed securely through Stripe (we do not store card details)</li>
+                <li><strong>Communications:</strong> Messages sent through our platform</li>
+            </ul>
+
+            <h3>Automatically Collected Information</h3>
+            <ul>
+                <li><strong>Device Information:</strong> Device type, operating system, unique device identifiers</li>
+                <li><strong>Usage Data:</strong> App features used, time spent, interaction patterns</li>
+                <li><strong>Location Information:</strong> Approximate location based on IP address (not precise GPS)</li>
+            </ul>
+
+            <h2>⚙️ How We Use Your Information</h2>
+            <p>We use your information to:</p>
+            <ul>
+                <li>Provide, maintain, and improve our services</li>
+                <li>Process transactions and send related information</li>
+                <li>Send administrative and promotional communications</li>
+                <li>Respond to comments, questions, and customer service requests</li>
+                <li>Monitor and analyze usage patterns and trends</li>
+                <li>Detect, prevent, and address technical issues and fraud</li>
+                <li>Personalize your experience and deliver relevant content</li>
+            </ul>
+
+            <h2>🔗 Third-Party Services</h2>
+            <p>We use the following third-party services:</p>
+            
+            <div class="service-card">
+                <strong>Supabase (Database & Authentication)</strong>
+                <p style="margin-top: 10px; margin-bottom: 0;">Stores user data, posts, messages<br>
+                Privacy Policy: <a href="https://supabase.com/privacy" target="_blank">https://supabase.com/privacy</a></p>
+            </div>
+            
+            <div class="service-card">
+                <strong>Stripe (Payment Processing)</strong>
+                <p style="margin-top: 10px; margin-bottom: 0;">Processes payments securely<br>
+                Privacy Policy: <a href="https://stripe.com/privacy" target="_blank">https://stripe.com/privacy</a></p>
+            </div>
+            
+            <div class="service-card">
+                <strong>OpenAI (Content Moderation)</strong>
+                <p style="margin-top: 10px; margin-bottom: 0;">AI-powered content analysis<br>
+                Privacy Policy: <a href="https://openai.com/privacy" target="_blank">https://openai.com/privacy</a></p>
+            </div>
+            
+            <div class="service-card">
+                <strong>Hive AI (Image Moderation)</strong>
+                <p style="margin-top: 10px; margin-bottom: 0;">Image content moderation<br>
+                Privacy Policy: <a href="https://thehive.ai/privacy" target="_blank">https://thehive.ai/privacy</a></p>
+            </div>
+
+            <h2>🔐 Data Storage and Security</h2>
+            <ul>
+                <li>Data is stored on secure servers provided by Supabase</li>
+                <li>We use encryption in transit (HTTPS/TLS)</li>
+                <li>Passwords are hashed and never stored in plain text</li>
+                <li>Payment information is handled exclusively by Stripe (PCI-DSS compliant)</li>
+                <li>We implement industry-standard security measures</li>
+            </ul>
+
+            <h2>👤 Your Data Rights</h2>
+            <p>You have the right to:</p>
+            <ul>
+                <li><strong>Access:</strong> Request a copy of your personal data</li>
+                <li><strong>Correction:</strong> Update or correct your information</li>
+                <li><strong>Deletion:</strong> Request deletion of your account and data</li>
+                <li><strong>Portability:</strong> Receive your data in a portable format</li>
+                <li><strong>Opt-out:</strong> Unsubscribe from marketing communications</li>
+                <li><strong>Restriction:</strong> Request limitations on data processing</li>
+            </ul>
+            <p>To exercise these rights, contact us at: <a href="mailto:privacy@foundervers.com">privacy@foundervers.com</a></p>
+
+            <h2>💾 Data Retention</h2>
+            <ul>
+                <li><strong>Active account data:</strong> Retained while your account is active</li>
+                <li><strong>Deleted account data:</strong> Removed within 30 days of deletion request</li>
+                <li><strong>Backup data:</strong> May persist in backups for up to 90 days</li>
+                <li><strong>Legal requirements:</strong> Some data may be retained to comply with legal obligations</li>
+            </ul>
+
+            <h2>👶 Children's Privacy</h2>
+            <p>FounderVers is not intended for users under 17. We do not knowingly collect information from children under 17. If you become aware that a child has provided us with personal information, please contact us.</p>
+
+            <h2>📸 Camera and Photo Library Access</h2>
+            <p>We request access to your camera and photo library to allow you to:</p>
+            <ul>
+                <li>Take photos for posts and profile pictures</li>
+                <li>Select images from your library to share</li>
+                <li>Capture and share videos</li>
+            </ul>
+            <p>We do not access your camera or photos without your explicit permission. You can manage these permissions in your device settings.</p>
+
+            <h2>🌍 International Data Transfers</h2>
+            <p>Your information may be transferred to and processed in countries other than your country of residence. We ensure appropriate safeguards are in place for such transfers.</p>
+
+            <h2>🇺🇸 California Privacy Rights (CCPA)</h2>
+            <p>California residents have additional rights:</p>
+            <ul>
+                <li>Right to know what personal information is collected</li>
+                <li>Right to know if personal information is sold or disclosed</li>
+                <li>Right to opt-out of the sale of personal information</li>
+                <li>Right to deletion</li>
+                <li>Right to non-discrimination</li>
+            </ul>
+            <p><strong>We do not sell personal information.</strong></p>
+
+            <h2>🇪🇺 European Privacy Rights (GDPR)</h2>
+            <p>If you are in the European Economic Area (EEA), you have rights under GDPR including:</p>
+            <ul>
+                <li>Right to access</li>
+                <li>Right to rectification</li>
+                <li>Right to erasure</li>
+                <li>Right to restrict processing</li>
+                <li>Right to data portability</li>
+                <li>Right to object</li>
+            </ul>
+
+            <h2>📝 Changes to This Privacy Policy</h2>
+            <p>We may update this Privacy Policy periodically. We will notify you of material changes by:</p>
+            <ul>
+                <li>Posting the new Privacy Policy in the app</li>
+                <li>Sending an email notification</li>
+                <li>Displaying a prominent notice</li>
+            </ul>
+
+            <div class="info-box">
+                <h3>Contact Us</h3>
+                <p>For privacy-related questions or concerns:</p>
+                <p>
+                    <strong>Email:</strong> <a href="mailto:privacy@foundervers.com">privacy@foundervers.com</a><br>
+                    <strong>Support:</strong> <a href="mailto:support@foundervers.com">support@foundervers.com</a><br>
+                    <strong>Website:</strong> <a href="https://foundervers.com" target="_blank">https://foundervers.com</a>
+                </p>
+            </div>
+
+            <p><strong style="color: #667eea;">By using FounderVers, you consent to this Privacy Policy.</strong></p>
+        </div>
+
+        <!-- Terms of Service Section -->
+        <div id="terms" class="content-section">
+            <h1>Terms of Service for FounderVers</h1>
+            <p class="last-updated"><strong>Last Updated:</strong> November 12, 2025</p>
+
+            <h2>✅ 1. Acceptance of Terms</h2>
+            <p>By accessing and using FounderVers ("Service"), you accept and agree to be bound by the terms and provision of this agreement. If you do not agree to abide by the above, please do not use this service.</p>
+
+            <h2>📜 2. Use License</h2>
+            <p>Permission is granted to temporarily download one copy of the materials (information or software) on FounderVers for personal, non-commercial transitory viewing only. This is the grant of a license, not a transfer of title, and under this license you may not:</p>
+            <ul>
+                <li>Modify or copy the materials</li>
+                <li>Use the materials for any commercial purpose or for any public display</li>
+                <li>Attempt to decompile or reverse engineer any software contained on the Service</li>
+                <li>Remove any copyright or other proprietary notations from the materials</li>
+                <li>Transfer the materials to another person or "mirror" the materials on any other server</li>
+                <li>Harass, abuse, or threaten other users</li>
+                <li>Post illegal content or content that violates third-party rights</li>
+                <li>Engage in any activity that disrupts the normal flow of the Service</li>
+            </ul>
+
+            <h2>👥 3. User Accounts</h2>
+            <p>You are responsible for maintaining the confidentiality of your account and password. You agree to accept responsibility for all activities that occur under your account. You must notify FounderVers immediately of any unauthorized use of your account.</p>
+
+            <h2>🖊️ 4. User Content</h2>
+            <p>You are solely responsible for any content you post to the Service. FounderVers does not endorse user-generated content and reserves the right to remove any content that violates these Terms of Service or Community Guidelines.</p>
+
+            <h2>🤝 5. Community Guidelines</h2>
+            <p>FounderVers is a community for founders and entrepreneurs. All members must:</p>
+            <ul>
+                <li>Treat all members with respect and professionalism</li>
+                <li>Share authentic and valuable content</li>
+                <li>Respect intellectual property and privacy</li>
+                <li>Report violations of these guidelines</li>
+                <li>Support a positive, collaborative community environment</li>
+            </ul>
+
+            <h2>🚫 6. Prohibited Content</h2>
+            <p>You may not post content that includes:</p>
+            <ul>
+                <li>Illegal content or activities</li>
+                <li>Hate speech or harassment</li>
+                <li>Explicit or obscene material</li>
+                <li>Content violating intellectual property rights</li>
+                <li>Spam or misleading information</li>
+                <li>Content inciting violence or illegal activity</li>
+            </ul>
+
+            <h2>💳 7. Payments and Subscriptions</h2>
+            <p>If you purchase premium features, you agree to pay all stated prices and applicable taxes. Payments are processed securely through Stripe. Subscriptions auto-renew unless cancelled in your account settings. Refunds are subject to our Refund Policy.</p>
+
+            <h2>⚠️ 8. Disclaimer</h2>
+            <p>The materials on FounderVers are provided "as is" without warranties. FounderVers disclaims all warranties, express or implied, including merchantability and fitness for a particular purpose.</p>
+
+            <h2>📋 9. Limitations of Liability</h2>
+            <p>FounderVers shall not be liable for any damages arising from the use or inability to use the Service, including but not limited to data loss, business interruption, or profit loss.</p>
+
+            <h2>🔗 10. Third-Party Links</h2>
+            <p>FounderVers may contain links to third-party websites. We are not responsible for the content of linked sites and use of such links is at your own risk.</p>
+
+            <h2>📝 11. Modifications to Terms</h2>
+            <p>FounderVers may revise these Terms at any time without notice. By using the Service, you agree to be bound by the current version of these Terms.</p>
+
+            <h2>🔐 12. Account Termination</h2>
+            <p>FounderVers reserves the right to terminate or suspend your account and access to the Service at any time for violation of these Terms or Community Guidelines.</p>
+
+            <h2>⚖️ 13. Governing Law</h2>
+            <p>These Terms are governed by and construed in accordance with applicable laws, and you irrevocably submit to the exclusive jurisdiction of the courts.</p>
+
+            <div class="info-box">
+                <h3>Questions & Support</h3>
+                <p>For questions about our Terms, please contact us:</p>
+                <p>
+                    <strong>Email:</strong> <a href="mailto:support@foundervers.com">support@foundervers.com</a><br>
+                    <strong>Website:</strong> <a href="https://foundervers.com" target="_blank">https://foundervers.com</a><br>
+                    <strong>Support Center:</strong> <a href="https://foundervers.com/support" target="_blank">https://foundervers.com/support</a>
+                </p>
+            </div>
+        </div>
+
+        <!-- Download Section -->
+        <div class="download-box" style="margin: 60px 50px 0;">
+            <h2>Download FounderVers Today</h2>
+            <p>Join thousands of founders, entrepreneurs, and innovators. Download our app now and start connecting!</p>
+            <div class="download-buttons">
+                <a href="https://apps.apple.com/app/foundervers/id6738901234" class="app-button" target="_blank">
+                    🍎 App Store
+                </a>
+                <a href="https://play.google.com/store/apps/details?id=com.foundervers.mobile" class="app-button" target="_blank">
+                    🤖 Google Play
+                </a>
+            </div>
+        </div>
+
+        <!-- Footer -->
+        <div class="footer">
+            <div class="footer-links">
+                <a href="index.html">Home</a>
+                <span>•</span>
+                <a href="legal.html#privacy">Privacy</a>
+                <span>•</span>
+                <a href="legal.html#terms">Terms</a>
+                <span>•</span>
+                <a href="#">Support</a>
+            </div>
+            <p>© 2025 FounderVers. All rights reserved.</p>
+            <p style="opacity: 0.7;">iOS Bundle ID: com.foundervers.mobile | Android Package: com.foundervers.mobile | Version 1.0.0</p>
+        </div>
+    </div>
+
+    <script>
+        function switchTab(tabName, event) {
+            event.preventDefault();
+            
+            // Hide all sections
+            const sections = document.querySelectorAll('.content-section');
+            sections.forEach(section => section.classList.remove('active'));
+            
+            // Remove active class from all tabs
+            const tabs = document.querySelectorAll('.tab');
+            tabs.forEach(tab => tab.classList.remove('active'));
+            
+            // Show selected section and mark tab as active
+            document.getElementById(tabName).classList.add('active');
+            event.target.classList.add('active');
+        }
+    </script>
 </body>
 </html>
