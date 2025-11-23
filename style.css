@@ -389,6 +389,48 @@ nav.scrolled {
     padding: 40px 0 60px;
     mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
     -webkit-mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
+    overflow-x: auto;
+    /* Restore scrolling */
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+    /* Hide scrollbar for cleaner look */
+    position: relative;
+}
+
+.screenshots-scroll-wrapper::-webkit-scrollbar {
+    display: none;
+}
+
+.scroll-controls {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin-top: -20px;
+    margin-bottom: 40px;
+}
+
+.scroll-btn {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background: #fff;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    font-size: 24px;
+    color: var(--text-primary);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+    z-index: 10;
+}
+
+.scroll-btn:hover {
+    transform: scale(1.1);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+    background: var(--text-primary);
+    color: #fff;
 }
 
 .screenshots-track {
