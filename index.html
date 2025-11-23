@@ -151,6 +151,12 @@
                     </div>
                 </div>
             </div>
+
+            <!-- Navigation Controls -->
+            <div class="scroll-controls">
+                <button class="scroll-btn" id="scrollLeft" aria-label="Scroll Left">←</button>
+                <button class="scroll-btn" id="scrollRight" aria-label="Scroll Right">→</button>
+            </div>
         </div>
     </section>
 
@@ -383,6 +389,27 @@
             card.style.transition = `all 0.6s ease ${index * 0.1}s`;
             observer.observe(card);
         });
+
+        // Screenshot Scrolling Logic
+        const scrollContainer = document.querySelector('.screenshots-scroll-wrapper');
+        const scrollLeftBtn = document.getElementById('scrollLeft');
+        const scrollRightBtn = document.getElementById('scrollRight');
+
+        if (scrollContainer && scrollLeftBtn && scrollRightBtn) {
+            scrollLeftBtn.addEventListener('click', () => {
+                scrollContainer.scrollBy({
+                    left: -400,
+                    behavior: 'smooth'
+                });
+            });
+
+            scrollRightBtn.addEventListener('click', () => {
+                scrollContainer.scrollBy({
+                    left: 400,
+                    behavior: 'smooth'
+                });
+            });
+        }
     </script>
 </body>
 
