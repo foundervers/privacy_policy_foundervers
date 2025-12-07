@@ -3,12 +3,18 @@
     "apps": [],
     "details": [
       {
-        "appID": "TEAM_ID.com.foundervers.app",
-        "paths": ["/posts/*", "/profile/*", "/feed", "/"]
+        "appID": "XF5WDB46P4.com.foundervers.mobile",
+        "paths": [
+          "/posts/*",
+          "/profile/*",
+          "/feed"
+        ]
       }
     ]
   },
   "webcredentials": {
-    "apps": ["TEAM_ID.com.foundervers.app"]
+    "apps": [
+      "XF5WDB46P4.com.foundervers.mobile"
+    ]
   }
 }
