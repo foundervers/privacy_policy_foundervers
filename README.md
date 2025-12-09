@@ -2,7 +2,7 @@
 
 ## 📋 Files Overview
 
-### 1. **index.html** - Premium Landing Page ✨ (13.71 KB)
+### 1. **index.html** - Premium Landing Page (13.71 KB)
 **COMPLETELY REDESIGNED with professional branding**
 
 **Features:**
