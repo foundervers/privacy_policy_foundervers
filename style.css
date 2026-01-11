@@ -649,44 +649,47 @@ footer {
 
     /* Hero Section */
     .hero {
-        padding: 100px 24px 60px;
+        padding: 60px 20px 30px;
     }
 
     .hero-logo img {
-        height: 80px;
+        height: 56px;
+        margin-bottom: 12px;
     }
 
     .hero h1 {
-        font-size: 36px;
-        line-height: 1.1;
+        font-size: 26px;
+        line-height: 1.15;
         letter-spacing: -0.02em;
+        margin-bottom: 8px;
     }
 
     .hero-tagline {
-        font-size: 20px;
-        margin-bottom: 16px;
+        font-size: 15px;
+        margin-bottom: 10px;
     }
 
     .hero-description {
-        font-size: 16px;
-        margin-bottom: 32px;
+        font-size: 14px;
+        margin-bottom: 20px;
         padding: 0 10px;
+        line-height: 1.4;
     }
 
     /* Download Buttons */
     .download-buttons {
         flex-direction: column;
         align-items: center;
-        gap: 12px;
-        margin-bottom: 40px;
+        gap: 10px;
+        margin-bottom: 30px;
     }
 
     .download-btn {
         width: 100%;
-        max-width: 280px;
+        max-width: 260px;
         justify-content: center;
-        padding: 14px 24px;
-        font-size: 15px;
+        padding: 12px 20px;
+        font-size: 14px;
     }
 
     /* Features Section */
@@ -857,41 +860,44 @@ footer {
 
     /* Hero Section */
     .hero {
-        padding: 70px 16px 40px;
+        padding: 56px 16px 24px;
     }
 
     .hero-logo img {
-        height: 50px;
-        margin-bottom: 12px;
-    }
-
-    .hero h1 {
-        font-size: 22px;
-        line-height: 1.2;
-        margin-bottom: 8px;
-    }
-
-    .hero-tagline {
-        font-size: 14px;
+        height: 44px;
         margin-bottom: 10px;
     }
 
-    .hero-description {
+    .hero h1 {
+        font-size: 20px;
+        line-height: 1.2;
+        margin-bottom: 6px;
+    }
+
+    .hero-tagline {
         font-size: 13px;
-        line-height: 1.45;
-        margin-bottom: 20px;
+        margin-bottom: 8px;
+    }
+
+    .hero-description {
+        font-size: 12px;
+        line-height: 1.4;
+        margin-bottom: 16px;
         padding: 0;
     }
 
     /* Download Buttons */
     .download-buttons {
         padding: 0 16px;
+        gap: 8px;
+        margin-bottom: 24px;
     }
 
     .download-btn {
         max-width: 100%;
-        padding: 16px 20px;
-        border-radius: 14px;
+        padding: 12px 16px;
+        border-radius: 12px;
+        font-size: 13px;
     }
 
     .btn-icon {
@@ -1034,28 +1040,29 @@ footer {
 /* ===== RESPONSIVE - SMALL MOBILE (375px and below) ===== */
 @media (max-width: 375px) {
     .hero {
-        padding: 64px 14px 32px;
+        padding: 52px 12px 20px;
     }
 
     .hero-logo img {
-        height: 44px;
-        margin-bottom: 10px;
-    }
-
-    .hero h1 {
-        font-size: 20px;
-        line-height: 1.2;
-    }
-
-    .hero-tagline {
-        font-size: 13px;
+        height: 38px;
         margin-bottom: 8px;
     }
 
-    .hero-description {
+    .hero h1 {
+        font-size: 18px;
+        line-height: 1.2;
+        margin-bottom: 4px;
+    }
+
+    .hero-tagline {
         font-size: 12px;
-        line-height: 1.4;
-        margin-bottom: 16px;
+        margin-bottom: 6px;
+    }
+
+    .hero-description {
+        font-size: 11px;
+        line-height: 1.35;
+        margin-bottom: 14px;
     }
 
     .download-btn {
